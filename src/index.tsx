@@ -1,15 +1,16 @@
+//будет рендериться в index.html файл
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+const root = ReactDOM.createRoot( // ссылка на DOM-элемент
+  document.getElementById('root') as HTMLElement //при автогенерации линкуется блок с id=root, as HTMLElement - просто приведение типов typescript'ом, чтоб не ругался
 );
-root.render(
+root.render( //после рендере появится первоначальная картинка
   <React.StrictMode>
-    <App />
+    <App /> {/* само приложение, формат jsx */}
   </React.StrictMode>
 );
 
