@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400500600&family=Poppins:wght@400500600700&display=swap')
+$fontInter: 'Inter', sans-serif
+
+.field
+  border: 1px solid rgba(62, 80, 114, 0.16)
+  border-radius: 16px
+  min-width: 282px
+  height: 560px
+
+.type
+  margin: 24px
+
+p, label
+  font-family: $fontInter
+  font-weight: 500
+
+p
+  font-size: 16px
+  line-height: 20px
+  color: rgba(0, 11, 38, 0.8)
+
+label
+  font-size: 14px
+  line-height: 30px
+  color: rgba(0, 11, 38, 0.72)
+  display: block
+  position: relative
+  padding-left: 25px
+  cursor: pointer
+
+label input:checked ~ .mark
+  border: 0
+  background-image: url(../../../assets/checkbox.png)
+
+.choose
+  display: flex
+  flex-direction: column
+
+.choose__scroll
+  overflow-y: scroll
+  overflow-x: hidden
+  height: 130px
+
+.choose__scroll::-webkit-scrollbar
+  width: 4px
+
+.choose__scroll::-webkit-scrollbar-thumb:vertical
+  background-color: rgba(62, 80, 114, 0.24)
+  border-radius: 4px
+
+.choice
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.mark
+  position: absolute
+  top: 6
+  left: 0
+  height: 18px
+  width: 18px
+  border: 1.5px solid rgba(0, 11, 38, 0.4)
+  border-radius: 4px
