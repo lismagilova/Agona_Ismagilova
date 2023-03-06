@@ -1,6 +1,9 @@
 import React, { FC, ReactElement } from 'react'
 import styles from './modal.module.sass'
 import exit from '../../assets/exit.png'
+import { ButtonModal } from './buttonModal/buttonModal'
+import { InputModal } from './inputModal/inputModal'
+import { LinkModal } from './linkModal/linkModal'
 
 
 export const Modal: FC<any> = ({active, setActive}): ReactElement => {
@@ -13,15 +16,15 @@ export const Modal: FC<any> = ({active, setActive}): ReactElement => {
                         <img src={exit} alt='exit'/>
                     </div>
                     <div className={styles.form}>
-                        <input type='number' placeholder='Телефон'/>
-                        <input type='password' placeholder='Пароль'/>
-                        <button className={styles.entrance}>Войти</button>
+                        <InputModal type='number' placeholder='Телефон'/>
+                        <InputModal type='password' placeholder='Пароль'/>
+                        <ButtonModal color={'green'}>Войти</ButtonModal>
                     </div>
                     <div className={styles.links}>
-                        <a href='/'>Войти с помощью смс</a>
-                        <a href='/'>Регистрация</a>
+                        <LinkModal url={'/'}>Войти с помощью смс</LinkModal>
+                        <LinkModal url={'/'}>Регистрация</LinkModal>
                     </div>
-                    <button className={styles.part}>Вход для партнёров</button>
+                    <ButtonModal color={'gray'}>Вход для партнёров</ButtonModal>
                 </div>
             </div>
         </div>
