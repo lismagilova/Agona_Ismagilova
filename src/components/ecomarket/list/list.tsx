@@ -29,14 +29,16 @@ export const List: FC<any> = ({arrayProd}:ArrayPr) => {
                     Получить промокод
                 </button>
             </div>
-            {arrayProd.map((product: ProdInt) => {
-                return <Product
+            {arrayProd.map((product: ProdInt, index) =>
+                <Product
+                    key={index}
                     img={product.img}
                     brand={product.brand}
                     name={product.name}
                     type={product.type}
-                    price={product.price}/>
-                })
+                    price={product.price}
+                />
+                )
             }
         </div>
     )

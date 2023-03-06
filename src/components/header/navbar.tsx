@@ -1,38 +1,41 @@
-import React, { ReactElement, FC} from 'react'
-import {Link} from 'react-router-dom'
+import React, { ReactElement, FC, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import styles from './navbar.module.sass'
 import logo from '../../assets/logo.png'
 import location from '../../assets/location.png'
 import money from '../../assets/money.png'
 import user from '../../assets/user.png'
+import { Modal } from '../modal/modal'
 
 
 export const Navbar: FC<any> = (): ReactElement => {
+    const [modalActive, setModalActive] = useState(true)
     return (
         <header className={styles.header}>
-            <Link to='/main'>
+            <NavLink to='/main'>
                 <img src={logo} alt='logo' className={styles.logo}/>
-            </Link>
+            </NavLink>
             <nav className={styles.links}>
-                <a href='/main' className={styles.point}>Главная</a>
-                <a href='/points' className={styles.point}>Пункты сбора</a>
-                <a href='/ecomarket' className={styles.point}>ЭкоМаркет</a>
-                <a href='/info' className={styles.point}>О сервисе</a>
+                <NavLink to='/main' className={styles.point}>Главная</NavLink>
+                <NavLink to='/points' className={styles.point}>Пункты сбора</NavLink>
+                <NavLink to='/ecomarket' className={styles.point}>ЭкоМаркет</NavLink>
+                <NavLink to='/about' className={styles.point}>О сервисе</NavLink>
             </nav>
             <nav className={styles.personal}>
-                <a href='/location' className={styles.map}>
+                <NavLink to='/location' className={styles.map}>
                     <img src={location} alt='location'/>
                     Казань
-                </a>
-                <a href='/cash' className={styles.money}>
+                </NavLink>
+                <NavLink to='/cash' className={styles.money}>
                     <img src={money} alt='money'/>
                     1000
-                </a>
-                <a href='/account' className={styles.data}>
+                </NavLink>
+                <NavLink to='/account' className={styles.data} onClick={() => setModalActive(true)}>
                     <img src={user} alt='user'/>
                     Алексей
-                </a>
+                </NavLink>
             </nav>
+            <Modal active={modalActive} setActive={setModalActive}/>
         </header>
     )
 }

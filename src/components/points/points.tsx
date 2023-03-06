@@ -1,6 +1,6 @@
 import { ReactElement, FC } from "react";
 
-export const Main: FC<any> = (): ReactElement => {
+export const Points: FC<any> = (): ReactElement => {
     return (
         <div></div>
     )

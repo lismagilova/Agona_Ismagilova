@@ -1,4 +1,4 @@
-import React, { ReactElement, FC} from "react"
+import React, { ReactElement, FC } from "react"
 import styles from './info.module.sass'
 import mail from '../../assets/mail.png'
 import phone from '../../assets/phone.png'
