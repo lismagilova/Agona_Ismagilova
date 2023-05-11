@@ -1,5 +1,7 @@
-import React, {FC, ReactElement} from 'react'
+import React, { FC, ReactElement } from 'react'
 import styles from './filter.module.sass'
+import { Checkbox } from '../checkbox/checkbox'
+
 
 export const Filter: FC<any> = (): ReactElement => {
     return (
@@ -7,64 +9,28 @@ export const Filter: FC<any> = (): ReactElement => {
             <div className={styles.type}>
                 <p>Пол</p>
                 <div className={styles.choose}>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Мужской
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Женский
-                        <span className={styles.mark}></span>
-                    </label>
+                    <Checkbox>Мужской</Checkbox>
+                    <Checkbox>Женский</Checkbox>
                 </div>
             </div>
             <div className={styles.type}>
                 <p>Тип товара</p>
                 <div className={styles.choose}>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Выбрать все
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Одежда
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Обувь
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Аксессуары
-                        <span className={styles.mark}></span>
-                    </label>
+                    <Checkbox>Выбрать все</Checkbox>
+                    <Checkbox>Одежда</Checkbox>
+                    <Checkbox>Обувь</Checkbox>
+                    <Checkbox>Аксессуары</Checkbox>
                 </div>
             </div>
             <div className={styles.type}>
                 <p>Брэнд</p>
-                <label>
-                    <input type='checkbox' className={styles.choice}/>Выбрать все
-                    <span className={styles.mark}></span>
-                </label>
+                <Checkbox>Выбрать все</Checkbox>
                 <div className={styles.choose__scroll}>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>H&M
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>P&B
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Adidas
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Nike
-                        <span className={styles.mark}></span>
-                    </label>
-                    <label>
-                        <input type='checkbox' className={styles.choice}/>Reebok
-                        <span className={styles.mark}></span>
-                    </label>
+                    <Checkbox>H&M</Checkbox>
+                    <Checkbox>P&B</Checkbox>
+                    <Checkbox>Adidas</Checkbox>
+                    <Checkbox>Nike</Checkbox>
+                    <Checkbox>Reebok</Checkbox>
                 </div>
             </div>
         </div>

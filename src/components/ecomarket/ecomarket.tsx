@@ -1,7 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 import styles from './ecomarket.module.sass'
-import { List} from './list/list'
 import { Filter } from './filter/filter'
+import { List } from './list/list'
+
 
 import sneakers1 from '../../assets/products/sneakers1.png'
 import sneakers2 from '../../assets/products/sneakers2.png'

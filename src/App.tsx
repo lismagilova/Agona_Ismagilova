@@ -1,9 +1,9 @@
 import React, {ReactElement, FC} from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Layout } from './components/layout/layout'
-import { Main } from './components/main/main'
 import { Points } from './components/points/points'
+import { Layout } from './components/layout/layout'
 import { Ecomarket } from './components/ecomarket/ecomarket'
+import { Main } from './components/main/main'
 import { About } from './components/about/about'
 
 

@@ -1,19 +1,16 @@
 import React, { ReactElement, FC, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './navbar.module.sass'
-import logo from '../../assets/logo.png'
-import location from '../../assets/location.png'
-import money from '../../assets/money.png'
-import user from '../../assets/user.png'
-import { Modal } from '../modal/modal'
+import { Modal_auto } from '../modal/modal_auto'
+
 
 
 export const Navbar: FC<any> = (): ReactElement => {
-    const [modalActive, setModalActive] = useState(true)
+    const [visible, setVisible] = useState(false)
     return (
         <header className={styles.header}>
             <NavLink to='/main'>
-                <img src={logo} alt='logo' className={styles.logo}/>
+                <img src='/logo.png' alt='logo' className={styles.logo}/>
             </NavLink>
             <nav className={styles.links}>
                 <NavLink to='/main' className={styles.point}>Главная</NavLink>
@@ -23,19 +20,20 @@ export const Navbar: FC<any> = (): ReactElement => {
             </nav>
             <nav className={styles.personal}>
                 <NavLink to='/location' className={styles.map}>
-                    <img src={location} alt='location'/>
+                    <img src='/location.png' alt='location'/>
                     Казань
                 </NavLink>
                 <NavLink to='/cash' className={styles.money}>
-                    <img src={money} alt='money'/>
+                    <img src='/money.png' alt='money'/>
                     1000
                 </NavLink>
-                <NavLink to='/account' className={styles.data} onClick={() => setModalActive(true)}>
-                    <img src={user} alt='user'/>
+                <NavLink to='/account' className={styles.data} >
+                    <img src='/user.png' alt='user'/>
                     Алексей
                 </NavLink>
+                <button onClick={() => setVisible(true)}> у меня не получилось привязать модалку не к кнопке, поэтому пока так(( </button>
             </nav>
-            <Modal active={modalActive} setActive={setModalActive}/>
+            <Modal_auto visible={visible} onClose={() => setVisible(false)}/>
         </header>
     )
 }

@@ -1,7 +1,6 @@
-import React, {FC} from 'react'
-import {ProdInt, Product} from '../product/product'
+import React, { FC } from 'react'
 import styles from './list.module.sass'
-import money from '../../../assets/money.png'
+import { ProdInt, Product } from '../product/product'
 
 
 interface ArrayPr {
@@ -17,7 +16,7 @@ export const List: FC<any> = ({arrayProd}:ArrayPr) => {
                     <div className={styles.personal}>
                         <span className={styles.phrase}>На вашем балансе</span>
                         <div className={styles.info}>
-                            <img className={styles.money} src={money} alt='money'/>
+                            <img className={styles.money} src='/money.png' alt='money'/>
                             <span className={styles.quantity}>200</span>
                         </div>
                     </div>
