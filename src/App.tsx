@@ -1,15 +1,15 @@
-import React, {ReactElement, FC} from 'react'
+import React, { ReactElement } from 'react'
 import { Provider } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
-import { Points } from './components/points/points'
-import { Layout } from './components/layout/layout'
-import { Ecomarket } from './components/ecomarket/ecomarket'
-import { Main } from './components/main/main'
-import { About } from './components/about/About'
+import { Points } from './pages/Points/Points'
+import { Layout } from './components/Layout/Layout'
+import { Ecomarket } from './pages/Ecomarket/Ecomarket'
+import { Main } from './pages/Main/Main'
+import { About } from './pages/About/About'
 import { store } from "./store";
 
 
-const App: FC<any> = (): ReactElement => {
+const App = (): ReactElement => {
     return (
         <Provider store={store}>
             <Routes>
