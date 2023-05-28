@@ -1,39 +1,54 @@
-import React, { ReactElement, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import styles from './Header.module.sass'
-import {ModalAuth} from "../modal/ModalAuth";
-
-
+import React, { ReactElement, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styles from './Header.module.sass';
+import { Modal } from '../modal/Modal';
 
 export const Header = (): ReactElement => {
-    const [visible, setVisible] = useState(false)
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const openModal = () => {
+        setModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
+    };
+
     return (
         <header className={styles.header}>
-            <NavLink to='/main'>
-                <img src='/logo.png' alt='logo' className={styles.logo}/>
+            <NavLink to="/main">
+                <img src="/logo.png" alt="logo" className={styles.logo} />
             </NavLink>
             <nav className={styles.links}>
-                <NavLink to='/main' className={styles.point}>Главная</NavLink>
-                <NavLink to='/points' className={styles.point}>Пункты сбора</NavLink>
-                <NavLink to='/ecomarket' className={styles.point}>ЭкоМаркет</NavLink>
-                <NavLink to='/about' className={styles.point}>О сервисе</NavLink>
+                <NavLink to="/main" className={styles.point}>
+                    Главная
+                </NavLink>
+                <NavLink to="/points" className={styles.point}>
+                    Пункты сбора
+                </NavLink>
+                <NavLink to="/ecomarket" className={styles.point}>
+                    ЭкоМаркет
+                </NavLink>
+                <NavLink to="/about" className={styles.point}>
+                    О сервисе
+                </NavLink>
             </nav>
             <nav className={styles.personal}>
-                <NavLink to='/location' className={styles.map}>
-                    <img src='/location.png' alt='location'/>
+                <NavLink to="/location" className={styles.map}>
+                    <img src="/location.png" alt="location" />
                     Казань
                 </NavLink>
-                <NavLink to='/cash' className={styles.money}>
-                    <img src='/money.png' alt='money'/>
+                <NavLink to="/cash" className={styles.money}>
+                    <img src="/money.png" alt="money" />
                     1000
                 </NavLink>
-                <NavLink to='/account' className={styles.data} >
-                    <img src='/user.png' alt='user'/>
+                <NavLink to="/account" className={styles.data}>
+                    <img src="/user.png" alt="user" />
                     Алексей
                 </NavLink>
-                <button onClick={() => setVisible(true)}> у меня не получилось привязать модалку не к кнопке, поэтому пока так(( </button>
+                <button onClick={openModal}>Открыть модалку</button>
             </nav>
-            <ModalAuth visible={visible} onClose={() => setVisible(false)}/>
+            <Modal visible={modalVisible} onClose={closeModal} />
         </header>
-    )
-}
+    );
+};
