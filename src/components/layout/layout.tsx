@@ -1,18 +1,18 @@
 import React, { FC, ReactElement } from 'react'
-import { Navbar } from '../header/navbar'
+import { Header } from '../header/header'
 import { Outlet } from 'react-router-dom'
-import { Info } from '../footer/info'
+import { Footer } from '../footer/footer'
 import styles from './layout.module.sass'
 
 
 export const Layout: FC<any> = (): ReactElement => {
     return (
         <div className={styles.layout}>
-            <Navbar />
+            <Header />
             <main>
                 <Outlet />
             </main>
-            <Info />
+            <Footer />
         </div>
     )
 }

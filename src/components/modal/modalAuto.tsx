@@ -13,7 +13,7 @@ interface Props {
 }
 
 
-export const Modal_auto: FC<any> = ({visible, onClose}: Props): ReactElement => {
+export const ModalAuto: FC<any> = ({visible, onClose}: Props): ReactElement => {
     const ref = useRef<HTMLDivElement>(null)
 
     useModalClose(ref, () => onClose())
@@ -30,7 +30,7 @@ export const Modal_auto: FC<any> = ({visible, onClose}: Props): ReactElement => 
                                     <img src='/exit.png' alt='exit'/>
                                 </div>
                                 <form className={styles.form}>
-                                    <InputModal type='number' placeholder='Телефон' /*name={tt}*//>
+                                    <InputModal type='text' placeholder='Телефон' /*name={tt}*//>
                                     <InputModal type='password' placeholder='Пароль'/>
                                     <ButtonModal color={'green'}>Войти</ButtonModal>
                                 </form>

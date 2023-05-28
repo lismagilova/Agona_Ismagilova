@@ -17,7 +17,7 @@ export const Product: FC<any> = (props: ProdInt) => {
             <div className={styles.label}>
                 <span className={styles.brand}>{props.brand}</span>
             </div>
-            <img className={styles.image} src='/money.png' alt='product'/>
+            <img className={styles.image} src={props.img} alt='product'/>
             <div className={styles.data}>
                 <div className={styles.model}>
                     <span className={styles.name}>{props.name}</span>

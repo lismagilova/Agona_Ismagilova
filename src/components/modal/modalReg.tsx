@@ -1,10 +1,11 @@
-import React, { FC, ReactElement, useRef } from 'react'
+import React, {FC, ReactElement, useRef, useEffect} from 'react'
 import styles from './modal.module.sass'
 import { ButtonModal } from './buttonModal/buttonModal'
 import { LinkModal } from './linkModal/linkModal'
 import { InputModal } from './inputModal/inputModal'
 import { Portal } from '../portal/portal'
 import { useModalClose } from "../hooks/useModalClose";
+import { useRegistrationMutation } from '../../store/auth'
 
 
 interface Props {
@@ -13,10 +14,26 @@ interface Props {
 }
 
 
-export const Modal_reg: FC<any> = ({visible, onClose}: Props): ReactElement => {
+export const ModalReg: FC<any> = ({visible, onClose}: Props): ReactElement => {
     const ref = useRef<HTMLDivElement>(null)
 
     useModalClose(ref, () => onClose())
+
+    const [register, result] = useRegistrationMutation()
+
+    useEffect(() => {
+        console.log(result);
+    }, [result])
+
+    const handleRegister = () => {
+        const data = {
+            email: 'gismagilova402@gmail.com',
+            phone_number: '88005553535',
+            password: '123456',
+            balance: 100
+        };
+        register(data)
+    }
 
     return (
         <>
@@ -26,16 +43,17 @@ export const Modal_reg: FC<any> = ({visible, onClose}: Props): ReactElement => {
                         <div className={styles.modal__content}>
                             <div className={styles.block}>
                                 <div className={styles.line}>
-                                    <p className={styles.title}>Вход</p>
+                                    <p className={styles.title}>Регистрация</p>
                                     <img src='/exit.png' alt='exit'/>
                                 </div>
                                 <form className={styles.form}>
-                                    <InputModal type='string' placeholder='Имя'/>
-                                    <InputModal type='mail' placeholder='Почта'/>
-                                    <InputModal type='number' placeholder='Телефон'/>
+                                    <InputModal type='text' placeholder='Имя'/>
+                                    <InputModal type='email' placeholder='Почта'/>
+                                    <InputModal type='text' placeholder='Телефон'/>
                                     <InputModal type='password' placeholder='Пароль'/>
                                     <InputModal type='password' placeholder='Повторите пароль'/>
-                                    <ButtonModal color={'green'}>Зарегистрироваться</ButtonModal>
+                                    {/*<button onClick={ handleRegister }>fff</button>*/}
+                                    <ButtonModal color={'green'} onClick={ handleRegister }>Зарегистрироваться</ButtonModal>
                                 </form>
                                 <div className={styles.links}>
                                     <LinkModal url={'/'}>Уже есть аккаунт?</LinkModal>

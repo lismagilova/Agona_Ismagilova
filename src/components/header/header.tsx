@@ -1,11 +1,11 @@
 import React, { ReactElement, FC, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import styles from './navbar.module.sass'
-import { Modal_auto } from '../modal/modal_auto'
+import styles from './header.module.sass'
+import { ModalReg } from '../modal/modalReg'
 
 
 
-export const Navbar: FC<any> = (): ReactElement => {
+export const Header: FC<any> = (): ReactElement => {
     const [visible, setVisible] = useState(false)
     return (
         <header className={styles.header}>
@@ -33,7 +33,7 @@ export const Navbar: FC<any> = (): ReactElement => {
                 </NavLink>
                 <button onClick={() => setVisible(true)}> у меня не получилось привязать модалку не к кнопке, поэтому пока так(( </button>
             </nav>
-            <Modal_auto visible={visible} onClose={() => setVisible(false)}/>
+            <ModalReg visible={visible} onClose={() => setVisible(false)}/>
         </header>
     )
 }

@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import styles from './filter.module.sass'
-import { Checkbox } from '../checkbox/checkbox'
+import { Checkbox } from '../checkbox/Checkbox'
 
 
 export const Filter: FC<any> = (): ReactElement => {
