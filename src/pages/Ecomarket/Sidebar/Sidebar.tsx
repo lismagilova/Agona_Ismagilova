@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styles from './Sidebar.module.sass'
 import { Checkbox } from '../../../components/Checkbox/Checkbox'
 
 
-export const Sidebar = (): ReactElement => {
+export const Sidebar = (): JSX.Element => {
     return (
         <div className={styles.field}>
             <div className={styles.type}>

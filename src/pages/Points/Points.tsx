@@ -1,6 +1,4 @@
-import { ReactElement } from 'react'
-
-export const Points = (): ReactElement => {
+export const Points = (): JSX.Element => {
     return (
         <div> Здесь точки приёма сырья</div>
     )

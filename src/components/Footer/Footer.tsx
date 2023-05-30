@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styles from './Footer.module.sass'
 
 
-export const Footer = (): ReactElement => {
+export const Footer = (): JSX.Element => {
     return (
         <footer className={styles.footer}>
             <div className={styles.block}>

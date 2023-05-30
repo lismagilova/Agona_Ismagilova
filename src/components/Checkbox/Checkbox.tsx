@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import styles from './Checkbox.module.sass'
 
 
@@ -7,7 +7,7 @@ interface CheckboxProps {
 }
 
 
-export const Checkbox: FC<CheckboxProps> = ({children}: CheckboxProps): ReactElement => {
+export const Checkbox = ({children}: CheckboxProps): JSX.Element => {
     return (
         <label>
             <input type='checkbox' className={styles.choice}/>

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import styles from './Ecomarket.module.sass'
 import { Sidebar } from './Sidebar/Sidebar'
 import { List } from './List/List'
@@ -20,7 +20,7 @@ const ArrComp = [
 ]
 
 
-export const Ecomarket = (): ReactElement => {
+export const Ecomarket = (): JSX.Element => {
     return (
         <main className={styles.market}>
             <div className={styles.substring}>

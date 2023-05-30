@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styles from './Produst.module.sass'
 
 
@@ -11,7 +11,7 @@ export interface ProductProps {
 }
 
 
-export const Product: FC<ProductProps> = (props: ProductProps) => {
+export const Product = (props: ProductProps) => {
     return (
         <div className={styles.card}>
             <div className={styles.label}>

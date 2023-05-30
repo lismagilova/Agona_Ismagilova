@@ -1,4 +1,4 @@
-import React, { ReactElement, FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './LinkModal.module.sass'
 
@@ -9,7 +9,7 @@ interface LinkProps {
 }
 
 
-export const LinkModal: FC<LinkProps> = ({url, children}: LinkProps): ReactElement => {
+export const LinkModal = ({url, children}: LinkProps): JSX.Element => {
     return (
         <NavLink to={url} className={styles.links}>
             {children}

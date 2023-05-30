@@ -1,8 +1,7 @@
-import { ReactElement } from 'react'
 import { Pattern } from '../Pattern'
 
 
-export const Slide2 = (): ReactElement => {
+export const Slide2 = (): JSX.Element => {
     return (
         <>
             <Pattern

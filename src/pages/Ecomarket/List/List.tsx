@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styles from './List.module.sass'
 import { ProductProps, Product } from '../Product/Product'
 
@@ -8,7 +8,7 @@ interface ArrayProps {
 }
 
 
-export const List: FC<ArrayProps> = ({arrayProd}:ArrayProps) => {
+export const List = ({arrayProd}:ArrayProps) => {
     return (
         <div className={styles.arrayProd}>
             <div className={styles.balance}>

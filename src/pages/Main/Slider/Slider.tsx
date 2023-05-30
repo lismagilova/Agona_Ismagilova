@@ -1,4 +1,3 @@
-import { ReactElement } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import { Slide1 } from './Slides/Slide1'
@@ -8,7 +7,7 @@ import styles from './Slider.module.sass'
 import 'swiper/swiper.css'
 
 
-export const Slider = (): ReactElement => {
+export const Slider = (): JSX.Element => {
     return (
         <div className={styles.wrapper}>
             <Swiper

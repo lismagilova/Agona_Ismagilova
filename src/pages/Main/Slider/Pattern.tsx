@@ -1,4 +1,3 @@
-import { ReactElement, FC } from 'react'
 import cn from 'classnames/bind'
 import { NavLink } from 'react-router-dom'
 import styles from './Pattern.module.sass'
@@ -18,7 +17,7 @@ interface PatternProps {
 }
 
 
-export const Pattern: FC<PatternProps> = ({name, img, title, content, link, button}: PatternProps): ReactElement => {
+export const Pattern = ({name, img, title, content, link, button}: PatternProps): JSX.Element => {
     return (
         <div className={cx(styles.slide, {
             slide1: name === 'slide1',

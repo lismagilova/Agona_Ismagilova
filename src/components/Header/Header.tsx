@@ -1,9 +1,9 @@
-import React, { ReactElement, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.sass';
 import { Modal } from '../modal/Modal';
 
-export const Header = (): ReactElement => {
+export const Header = (): JSX.Element => {
     const [modalVisible, setModalVisible] = useState(false);
 
     const openModal = () => {

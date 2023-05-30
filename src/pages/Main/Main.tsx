@@ -1,10 +1,9 @@
-import { ReactElement } from 'react'
 import { Card } from './Card/Card'
 import styles from './Main.module.sass'
 import { Slider } from './Slider/Slider'
 
 
-export const Main = (): ReactElement => {
+export const Main = (): JSX.Element => {
     return (
         <div className={styles.carousel}>
             <Slider/>

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import { Points } from './pages/Points/Points'
@@ -9,7 +9,7 @@ import { About } from './pages/About/About'
 import { store } from "./store";
 
 
-const App = (): ReactElement => {
+const App = (): JSX.Element => {
     return (
         <Provider store={store}>
             <Routes>

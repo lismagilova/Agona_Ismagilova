@@ -1,4 +1,3 @@
-import { ReactElement, FC } from 'react'
 import cn from 'classnames/bind'
 import { NavLink } from 'react-router-dom'
 import styles from './Card.module.sass'
@@ -15,7 +14,7 @@ interface FillProps {
 }
 
 
-export const Card: FC<FillProps> = ({img, title, content, link}: FillProps): ReactElement => {
+export const Card = ({img, title, content, link}: FillProps): JSX.Element => {
     return (
         <div className={styles.window}>
             <div className={styles.context}>
