@@ -6,7 +6,7 @@ import { ButtonModal } from './ButtonModal/ButtonModal'
 import { LinkModal } from './LinkModal/LinkModal'
 import { InputModal } from './InputModal/InputModal'
 import { Portal } from '../Portal/Portal'
-import { useAuthorizationMutation } from '../../store/auth'
+import { useAuthorizationMutation, useLazyGetProfileQuery } from '../../store/auth'
 
 interface ModalProps {
     visible: boolean
@@ -25,17 +25,17 @@ const validationSchema = Yup.object({
 })
 
 export const ModalAuth = ({ visible, onClose, openRegistrationModal }: ModalProps): JSX.Element => {
-    const onSubmit = (values: typeof initialValues) => {
-        handleAuth()
-        console.log(values)
-        onClose()
-    }
-
     const[auth, {data, isLoading, isSuccess}] = useAuthorizationMutation()
 
+    const [getProfile] = useLazyGetProfileQuery()
+
     useEffect(() => {
-        console.log(data, isSuccess)
-    }, [data, isSuccess])
+        if (isSuccess) {
+            localStorage.setItem('token', data?.token as string)
+            getProfile(null)
+                .then(promise => promise.data)
+        }
+    }, [data, getProfile,isSuccess])
 
     const handleAuth = () => {
         const data = {
@@ -43,6 +43,11 @@ export const ModalAuth = ({ visible, onClose, openRegistrationModal }: ModalProp
             password: formik.values.password
         }
         auth(data)
+    }
+    const onSubmit = (values: typeof initialValues) => {
+        handleAuth()
+        console.log(values)
+        onClose()
     }
 
     const formik = useFormik({
